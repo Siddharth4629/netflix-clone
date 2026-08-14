@@ -1,0 +1,383 @@
+/* ==========================================================================
+   NETFLIX CLONE - CONTENT ROWS, CAROUSELS & HOVER CARDS
+   ========================================================================== */
+
+.content-rows-container {
+  position: relative;
+  z-index: 10;
+  margin-top: -6vw;
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Individual Content Row */
+.content-row {
+  position: relative;
+  padding: 0 var(--page-padding);
+}
+
+.row-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.8rem;
+  cursor: pointer;
+}
+
+.row-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+  font-weight: 700;
+  color: #e5e5e5;
+  transition: color var(--transition-fast);
+}
+
+.row-explore-all {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #54b9c5;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.row-header:hover .row-title {
+  color: #fff;
+}
+.row-header:hover .row-explore-all {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Slider / Carousel Wrapper */
+.row-slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.row-slider {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  margin: -20px 0;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.row-slider::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* Carousel Scroll Navigation Chevrons */
+.slider-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4%;
+  min-width: 45px;
+  background: rgba(20, 20, 20, 0.65);
+  color: #fff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  opacity: 0;
+  transition: all var(--transition-fast);
+  backdrop-filter: blur(4px);
+}
+
+.slider-handle.prev {
+  left: calc(-1 * var(--page-padding));
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.slider-handle.next {
+  right: calc(-1 * var(--page-padding));
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.content-row:hover .slider-handle {
+  opacity: 1;
+}
+
+.slider-handle:hover {
+  background: rgba(20, 20, 20, 0.9);
+  color: var(--netflix-red);
+}
+
+.slider-handle svg {
+  width: 28px;
+  height: 28px;
+  transition: transform var(--transition-fast);
+}
+
+.slider-handle:hover svg {
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   CARD STYLES
+   ========================================================================== */
+
+.movie-card {
+  position: relative;
+  flex: 0 0 calc(100% / 6 - 8px);
+  min-width: 200px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  user-select: none;
+}
+
+/* Standard Backdrop Aspect Ratio (16:9) */
+.movie-card .card-media-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: var(--netflix-card-bg);
+}
+
+.movie-card .card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-normal);
+}
+
+/* Tall Netflix Originals Card */
+.content-row.originals-row .movie-card {
+  flex: 0 0 calc(100% / 6 - 8px);
+  min-width: 170px;
+}
+
+.content-row.originals-row .card-media-box {
+  aspect-ratio: 2 / 3;
+}
+
+.n-original-badge-corner {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 22px;
+  height: 32px;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.8));
+}
+
+/* Card Progress Bar for Continue Watching */
+.card-progress-bar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 5;
+}
+
+.card-progress-bar-fill {
+  height: 100%;
+  background: var(--netflix-red);
+  border-radius: 0 2px 2px 0;
+}
+
+/* Top 10 Ranked Number Badge */
+.top10-card-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 0 0 calc(100% / 5 - 12px);
+  min-width: 230px;
+}
+
+.top10-rank-num {
+  font-family: var(--font-title);
+  font-size: 8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #000;
+  -webkit-text-stroke: 4px #595959;
+  letter-spacing: -12px;
+  margin-right: -18px;
+  z-index: 1;
+  user-select: none;
+  transition: -webkit-text-stroke var(--transition-fast);
+}
+
+.top10-card-wrapper:hover .top10-rank-num {
+  -webkit-text-stroke: 4px #fff;
+}
+
+.top10-card-wrapper .movie-card {
+  flex: 1;
+  min-width: 140px;
+}
+
+.top10-card-wrapper .card-media-box {
+  aspect-ratio: 2 / 3;
+}
+
+/* ==========================================================================
+   FLOATING HOVER PREVIEW CARD POPUP
+   ========================================================================== */
+
+#hover-preview-card {
+  position: fixed;
+  z-index: 9999;
+  width: 320px;
+  background-color: var(--netflix-dark);
+  border-radius: 6px;
+  box-shadow: var(--shadow-strong);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+#hover-preview-card.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.preview-media-container {
+  position: relative;
+  width: 100%;
+  height: 175px;
+  background-color: #000;
+}
+
+.preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-img-fallback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.preview-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--netflix-dark);
+}
+
+.preview-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.preview-actions-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(30, 30, 30, 0.8);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.btn-circle:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+.btn-circle.play-btn {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}
+.btn-circle.play-btn:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.btn-circle.liked {
+  color: #46d369;
+  border-color: #46d369;
+}
+
+.btn-circle.in-list {
+  color: var(--netflix-red);
+  border-color: var(--netflix-red);
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+}
+
+.preview-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.preview-genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: #aaa;
+}
+
+.genre-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #777;
+}
+
+/* Responsive Grid / Slider items */
+@media (max-width: 1200px) {
+  .movie-card { flex: 0 0 calc(100% / 4 - 8px); }
+  .top10-card-wrapper { flex: 0 0 calc(100% / 4 - 12px); }
+}
+@media (max-width: 768px) {
+  .movie-card { flex: 0 0 calc(100% / 3 - 8px); min-width: 150px; }
+  .top10-card-wrapper { flex: 0 0 calc(100% / 3 - 12px); min-width: 180px; }
+  .top10-rank-num { font-size: 5.5rem; letter-spacing: -8px; }
+}
+@media (max-width: 480px) {
+  .movie-card { flex: 0 0 calc(100% / 2 - 6px); min-width: 130px; }
+  .top10-card-wrapper { flex: 0 0 calc(100% / 2 - 8px); min-width: 150px; }
+}

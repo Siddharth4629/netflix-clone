@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#141414" />
+  <meta name="description" content="Watch Netflix movies & TV shows online or stream right to your smart TV, game console, PC, Mac, mobile, tablet and more." />
+  <title>Netflix India – Watch TV Shows Online, Watch Movies Online</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/banner.css" />
+  <link rel="stylesheet" href="css/rows.css" />
+  <link rel="stylesheet" href="css/modal.css" />
+  <link rel="stylesheet" href="css/player.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       MAIN BROWSE NAVIGATION HEADER
+       ========================================================================= -->
+  <header id="main-header" class="main-header">
+    <div class="nav-left">
+      <a href="#" class="brand-logo" id="main-brand-logo" aria-label="Netflix Home">
+        <svg viewBox="0 0 111 30" width="112" height="30" aria-label="Netflix" fill="#E50914">
+          <path d="M0 0h5.344l7.687 20.094V0h5.188v30c-2.469.375-4.969.719-7.5 1L2.844 8.781V31.5c-1.031.063-1.969.094-2.844.094V0z"/>
+          <path d="M22.5 0h13.5v4.5h-8.5v7h7.5v4.5h-7.5v8.7c-1.7.2-3.4.4-5 .6V0z"/>
+          <path d="M38 0h15v4.5h-5v21.5c-1.7.4-3.3.7-5 1V4.5h-5V0z"/>
+          <path d="M55 0h13v4.5h-8v7h7v4.5h-7v12.2c-1.6.4-3.3.8-5 1.2V0z"/>
+          <path d="M70 0h5v23.5c2.5-.5 5-1.1 7.5-1.8v4.5c-4.2 1.1-8.4 2-12.5 2.8V0z"/>
+          <path d="M85 0h5v27.2c-1.6-.1-3.3-.2-5-.3V0z"/>
+          <path d="M92.5 0h5.2l4.8 11.2L107 0h5.2l-7.2 15 7.8 15c-1.8-.3-3.5-.6-5.3-.9l-5.3-10.8-5.3 10.1c-1.7-.2-3.4-.5-5.1-.7l7.7-13.7-7.5-14z"/>
+        </svg>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#" class="nav-link active" data-category="home">Home</a></li>
+          <li><a href="#" class="nav-link" data-category="tv">TV Shows</a></li>
+          <li><a href="#" class="nav-link" data-category="movies">Movies</a></li>
+          <li><a href="#" class="nav-link" data-category="popular">New & Popular</a></li>
+          <li><a href="#" class="nav-link" data-category="mylist">My List</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="nav-right">
+      <!-- Search -->
+      <div class="search-container" id="nav-search-container">
+        <button class="search-btn" id="nav-search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </button>
+        <div class="search-input-wrapper">
+          <input type="text" class="search-input" id="nav-search-input" placeholder="Titles, people, genres..." />
+          <button class="search-clear-btn" id="nav-search-clear">✕</button>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div class="notification-container">
+        <button class="notification-btn" aria-label="Notifications">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <span class="notification-badge">3</span>
+        </button>
+        <div class="notification-dropdown">
+          <div class="notification-header">Recent Notifications</div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1618336753974-aae8e04506aa?w=100&auto=format&fit=crop&q=80" alt="Stranger Things" />
+            <div class="notification-info">
+              <h4>Stranger Things: Season 5</h4>
+              <p>Coming Soon to Netflix</p>
+            </div>
+          </div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1563089145-599997674d42?w=100&auto=format&fit=crop&q=80" alt="Squid Game" />
+            <div class="notification-info">
+              <h4>Squid Game Season 2</h4>
+              <p>New episodes now streaming</p>
+            </div>
+          </div>
+          <div class="notification-item">
+            <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?w=100&auto=format&fit=crop&q=80" alt="Oppenheimer" />
+            <div class="notification-info">
+              <h4>Oppenheimer</h4>
+              <p>Now in #1 Top 10 Today</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Switcher Dropdown -->
+      <div class="profile-menu-container" id="profile-menu-container">
+        <div class="profile-avatar-trigger" id="profile-avatar-trigger">
+          <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120&auto=format&fit=crop&q=80" alt="Profile" class="profile-avatar" id="current-user-avatar" />
+          <span class="profile-caret">▼</span>
+        </div>
+        <div class="profile-dropdown" id="profile-dropdown">
+          <!-- Dynamic profile list populated by navbar.js -->
+          <ul class="profile-list" id="navbar-profile-list"></ul>
+          
+          <ul class="profile-links">
+            <li class="profile-link-item">
+              <button id="nav-add-profile-btn">
+                <span>➕</span> Add New Profile
+              </button>
+            </li>
+            <li class="profile-link-item">
+              <button id="nav-manage-profiles-btn">
+                <span>⚙️</span> Manage Profiles
+              </button>
+            </li>
+            <li class="profile-link-item profile-signout">
+              <button id="nav-signout-btn">
+                <span>🚪</span> Sign Out of Netflix
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       VIEW 1: BROWSE / STREAMING DASHBOARD
+       ========================================================================= -->
+  <main id="browse-view" class="view-section active">
+    <!-- Hero Billboard Section -->
+    <section class="hero-billboard" id="hero-billboard">
+      <div class="hero-media-wrapper">
+        <div class="hero-backdrop-fallback" id="hero-backdrop-img"></div>
+        <video class="hero-video" id="hero-bg-video" autoplay muted loop playsinline></video>
+      </div>
+
+      <div class="hero-vignette"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge-top">
+          <span class="n-logo">N</span>
+          <span id="hero-top-badge">TOP 10 • #1 IN TV SHOWS TODAY</span>
+        </div>
+
+        <h1 class="hero-title" id="hero-title">STRANGER THINGS</h1>
+
+        <div class="hero-meta-row">
+          <span class="badge-match">98% Match</span>
+          <span class="badge-age" id="hero-maturity">16+</span>
+          <span>4 Seasons</span>
+          <span class="badge-quality">4K Ultra HD</span>
+          <span class="badge-quality">5.1 Audio</span>
+        </div>
+
+        <p class="hero-synopsis" id="hero-synopsis">
+          When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl with telekinetic powers.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn btn-white" id="hero-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Play
+          </button>
+          <button class="btn btn-secondary" id="hero-info-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+            More Info
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-side-controls">
+        <button class="sound-toggle-btn" id="hero-sound-btn" aria-label="Toggle Hero Sound">
+          <span id="hero-sound-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+          </span>
+        </button>
+        <div class="hero-maturity-badge">16+</div>
+      </div>
+    </section>
+
+    <!-- Dynamic Content Rows Container -->
+    <div class="content-rows-container" id="content-rows-container">
+      <!-- Rows dynamically populated by rows.js -->
+    </div>
+
+    <!-- Search Results / Filter View (Active during search/nav filtering) -->
+    <section id="search-view-container" style="display: none;">
+      <div class="search-results-header">
+        <h2 id="search-results-query-title">Search Results</h2>
+      </div>
+      <div class="search-results-grid" id="search-results-grid"></div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       VIEW 2: NETFLIX LANDING PAGE (Marketing & Sign-up)
+       ========================================================================= -->
+  <section id="landing-view" class="view-section">
+    <!-- Landing Header -->
+    <header class="landing-header">
+      <a href="#" class="brand-logo" id="landing-brand-logo" aria-label="Netflix Home">
+        <svg viewBox="0 0 111 30" width="130" height="36" aria-label="Netflix" fill="#E50914">
+          <path d="M0 0h5.344l7.687 20.094V0h5.188v30c-2.469.375-4.969.719-7.5 1L2.844 8.781V31.5c-1.031.063-1.969.094-2.844.094V0z"/>
+          <path d="M22.5 0h13.5v4.5h-8.5v7h7.5v4.5h-7.5v8.7c-1.7.2-3.4.4-5 .6V0z"/>
+          <path d="M38 0h15v4.5h-5v21.5c-1.7.4-3.3.7-5 1V4.5h-5V0z"/>
+          <path d="M55 0h13v4.5h-8v7h7v4.5h-7v12.2c-1.6.4-3.3.8-5 1.2V0z"/>
+          <path d="M70 0h5v23.5c2.5-.5 5-1.1 7.5-1.8v4.5c-4.2 1.1-8.4 2-12.5 2.8V0z"/>
+          <path d="M85 0h5v27.2c-1.6-.1-3.3-.2-5-.3V0z"/>
+          <path d="M92.5 0h5.2l4.8 11.2L107 0h5.2l-7.2 15 7.8 15c-1.8-.3-3.5-.6-5.3-.9l-5.3-10.8-5.3 10.1c-1.7-.2-3.4-.5-5.1-.7l7.7-13.7-7.5-14z"/>
+        </svg>
+      </a>
+      <div style="display: flex; gap: 1rem; align-items: center;">
+        <button class="btn btn-primary" id="landing-signin-btn">Sign In</button>
+      </div>
+    </header>
+
+    <!-- Landing Hero -->
+    <div class="landing-hero">
+      <div class="landing-hero-content">
+        <h1>Unlimited movies, TV shows and more</h1>
+        <p class="subtitle">Starts at ₹149. Cancel anytime.</p>
+        <p class="cta-text">Ready to watch? Enter your email to create or restart your membership.</p>
+        <form class="cta-form">
+          <div class="cta-input-group">
+            <input type="email" class="cta-input" placeholder=" " required />
+            <label class="cta-label">Email address</label>
+          </div>
+          <button type="submit" class="btn btn-primary" style="font-size: 1.3rem; padding: 0.9rem 2rem;">
+            Get Started &nbsp;›
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Feature 1 -->
+    <div class="landing-feature-row">
+      <div class="feature-text">
+        <h2>Enjoy on your TV</h2>
+        <p>Watch on Smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</p>
+      </div>
+      <div class="feature-media">
+        <img class="feature-img" src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&auto=format&fit=crop&q=80" alt="Watch on TV" />
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="landing-feature-row reverse">
+      <div class="feature-text">
+        <h2>Download your shows to watch offline</h2>
+        <p>Save your favourites easily and always have something to watch on road trips and flights.</p>
+      </div>
+      <div class="feature-media">
+        <img class="feature-img" src="https://images.unsplash.com/photo-1512428559087-560fa5ceab42?w=600&auto=format&fit=crop&q=80" alt="Download offline" />
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="landing-feature-row">
+      <div class="feature-text">
+        <h2>Watch everywhere</h2>
+        <p>Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.</p>
+      </div>
+      <div class="feature-media">
+        <img class="feature-img" src="https://images.unsplash.com/photo-1522869635100-9f4c5e86aa37?w=600&auto=format&fit=crop&q=80" alt="Watch everywhere" />
+      </div>
+    </div>
+
+    <!-- Feature 4 -->
+    <div class="landing-feature-row reverse">
+      <div class="feature-text">
+        <h2>Create profiles for kids</h2>
+        <p>Send children on adventures with their favourite characters in a space made just for them — free with your membership.</p>
+      </div>
+      <div class="feature-media">
+        <img class="feature-img" src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=600&auto=format&fit=crop&q=80" alt="Kids profiles" />
+      </div>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <section class="landing-faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list" id="faq-list">
+        <!-- Injected by app.js -->
+      </div>
+      <p class="cta-text">Ready to watch? Enter your email to create or restart your membership.</p>
+      <form class="cta-form" style="margin-top: 1.5rem;">
+        <div class="cta-input-group">
+          <input type="email" class="cta-input" placeholder=" " required />
+          <label class="cta-label">Email address</label>
+        </div>
+        <button type="submit" class="btn btn-primary" style="font-size: 1.3rem; padding: 0.9rem 2rem;">
+          Get Started &nbsp;›
+        </button>
+      </form>
+    </section>
+  </section>
+
+  <!-- =========================================================================
+       GLOBAL FOOTER
+       ========================================================================= -->
+  <footer class="netflix-footer">
+    <div class="footer-top">
+      <p>Questions? Call <a href="tel:000-800-919-1694">000-800-919-1694</a></p>
+    </div>
+    <ul class="footer-links">
+      <li><a href="#">FAQ</a></li>
+      <li><a href="#">Help Centre</a></li>
+      <li><a href="#">Account</a></li>
+      <li><a href="#">Media Centre</a></li>
+      <li><a href="#">Investor Relations</a></li>
+      <li><a href="#">Jobs</a></li>
+      <li><a href="#">Ways to Watch</a></li>
+      <li><a href="#">Terms of Use</a></li>
+      <li><a href="#">Privacy</a></li>
+      <li><a href="#">Cookie Preferences</a></li>
+      <li><a href="#">Corporate Information</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Speed Test</a></li>
+      <li><a href="#">Legal Notices</a></li>
+      <li><a href="#">Only on Netflix</a></li>
+    </ul>
+    <p class="footer-bottom">Netflix India • College Project Demonstration Prototype</p>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: TITLE DETAILS MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="details-modal-overlay">
+    <div class="details-modal">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close">✕</button>
+      
+      <div class="modal-hero">
+        <img class="modal-hero-img" id="modal-hero-img" src="" alt="Hero" />
+        <video class="modal-hero-video" id="modal-hero-video" autoplay muted loop playsinline></video>
+        <div class="modal-hero-gradient"></div>
+        <div class="modal-hero-content">
+          <h2 class="modal-hero-title" id="modal-title">TITLE</h2>
+          <div class="modal-hero-controls">
+            <div class="modal-hero-actions">
+              <button class="btn btn-white" id="modal-play-btn">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                Play
+              </button>
+              <button class="btn-circle" id="modal-list-btn" title="Add to My List">+</button>
+              <button class="btn-circle" id="modal-like-btn" title="I like this">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3zM7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+              </button>
+            </div>
+            <button class="sound-toggle-btn" id="modal-sound-btn" aria-label="Toggle Sound">
+              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-details-grid">
+          <div class="details-left">
+            <div class="details-meta-line">
+              <span class="badge-match" id="modal-match">98% Match</span>
+              <span id="modal-year">2024</span>
+              <span class="badge-age" id="modal-age">16+</span>
+              <span id="modal-duration">4 Seasons</span>
+              <span class="badge-quality" id="modal-quality">4K Ultra HD</span>
+              <span class="badge-quality">Spatial Audio</span>
+            </div>
+            <p class="details-synopsis" id="modal-synopsis"></p>
+          </div>
+          <div class="details-right">
+            <div class="details-right-item">
+              <span class="label">Cast: </span>
+              <span class="value" id="modal-cast-list"></span>
+            </div>
+            <div class="details-right-item">
+              <span class="label">Genres: </span>
+              <span class="value" id="modal-genres-list"></span>
+            </div>
+            <div class="details-right-item">
+              <span class="label">Creator: </span>
+              <span class="value" id="modal-creator"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TV Episodes List Section -->
+        <div class="modal-episodes-section" id="modal-episodes-section">
+          <div class="episodes-header">
+            <h3>Episodes</h3>
+            <select class="season-picker">
+              <option value="1">Season 1</option>
+              <option value="2">Season 2</option>
+              <option value="3">Season 3</option>
+              <option value="4" selected>Season 4</option>
+            </select>
+          </div>
+          <div class="episodes-list" id="modal-episodes-list"></div>
+        </div>
+
+        <!-- More Like This Recommendations -->
+        <div class="modal-recommendations-section">
+          <h3>More Like This</h3>
+          <div class="recommendations-grid" id="modal-recommendations-grid"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: CUSTOM FULL-SCREEN VIDEO PLAYER
+       ========================================================================= -->
+  <div id="video-player-modal">
+    <div class="player-container" id="player-container">
+      <video class="main-video-stream" id="main-video-stream" preload="metadata"></video>
+      <div class="player-buffering-spinner" id="player-buffering-spinner"></div>
+      <div class="player-center-feedback" id="player-center-feedback">▶</div>
+
+      <!-- Controls Overlay -->
+      <div class="player-controls-overlay">
+        <!-- Top Controls -->
+        <div class="player-top-bar">
+          <button class="player-back-btn" id="player-back-btn" aria-label="Exit Player">←</button>
+          <div class="player-title-info">
+            <h2 id="player-title-text">Stranger Things</h2>
+            <p id="player-subtitle-text">Playing TV Series</p>
+          </div>
+        </div>
+
+        <!-- Bottom Controls -->
+        <div class="player-bottom-bar">
+          <!-- Timeline -->
+          <div class="player-timeline-container" id="player-timeline-container">
+            <div class="timeline-progress-bar" id="player-progress-bar"></div>
+            <div class="timeline-scrubber-handle" id="player-scrubber-handle"></div>
+            <div class="timeline-hover-tooltip" id="player-timeline-tooltip">00:00</div>
+          </div>
+
+          <!-- Controls Row -->
+          <div class="player-controls-row">
+            <div class="controls-left">
+              <button class="control-btn play-pause-btn" id="player-play-pause-btn" aria-label="Play/Pause">❚❚</button>
+              <button class="control-btn" id="player-skip-back-btn" title="Rewind 10 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 4v6h6"></path><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path><text x="12" y="15" font-size="8" fill="currentColor" text-anchor="middle" font-weight="bold">10</text></svg>
+              </button>
+              <button class="control-btn" id="player-skip-fwd-btn" title="Fast Forward 10 seconds">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 4v6h-6"></path><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path><text x="12" y="15" font-size="8" fill="currentColor" text-anchor="middle" font-weight="bold">10</text></svg>
+              </button>
+              <div class="volume-control-wrapper">
+                <button class="control-btn" id="player-volume-btn" aria-label="Mute/Unmute">🔊</button>
+                <input type="range" class="volume-slider" id="player-volume-slider" min="0" max="1" step="0.05" value="1" />
+              </div>
+              <div class="player-time-display" id="player-time-display">00:00 / 00:00</div>
+            </div>
+
+            <div class="controls-center-title" id="player-center-title">
+              Stranger Things
+            </div>
+
+            <div class="controls-right">
+              <button class="control-btn speed-selector-btn" id="player-speed-btn" title="Playback Speed">1x</button>
+              <button class="control-btn" id="player-fullscreen-btn" title="Full Screen">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 3 21 3 21 9"></polyline><polyline points="9 21 3 21 3 15"></polyline><line x1="21" y1="3" x2="14" y2="10"></line><line x1="3" y1="21" x2="10" y2="14"></line></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       FLOATING HOVER PREVIEW CARD POPUP
+       ========================================================================= -->
+  <div id="hover-preview-card"></div>
+
+  <!-- =========================================================================
+       MODAL 3: SIGN IN & SIGN UP (CREATE ACCOUNT) MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="auth-modal-overlay">
+    <div class="auth-modal">
+      <button class="modal-close-btn" id="auth-modal-close" aria-label="Close">✕</button>
+      
+      <!-- Tab Headers -->
+      <div class="auth-tabs">
+        <button class="auth-tab-btn active" id="tab-btn-signin">Sign In</button>
+        <button class="auth-tab-btn" id="tab-btn-signup">Create Account</button>
+      </div>
+
+      <!-- TAB 1: SIGN IN FORM -->
+      <div class="auth-form-panel active" id="panel-signin">
+        <form id="auth-login-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="auth-input-group">
+            <label for="auth-email-input">Email address</label>
+            <input type="email" class="auth-input" id="auth-email-input" value="siddharth@example.com" placeholder="name@example.com" required />
+          </div>
+          
+          <div class="auth-input-group">
+            <label for="auth-password-input">Password</label>
+            <input type="password" class="auth-input" id="auth-password-input" value="password123" placeholder="Enter your password" required />
+          </div>
+
+          <div class="auth-quick-fill">
+            <span>Try demo login:</span>
+            <button type="button" class="btn-demo-fill" id="btn-demo-signin">Demo: Siddharth</button>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.9rem; font-size: 1.05rem;">
+            Sign In
+          </button>
+
+          <p class="auth-switch-text">
+            New to Netflix? <a href="#" id="switch-to-signup">Sign up now.</a>
+          </p>
+        </form>
+      </div>
+
+      <!-- TAB 2: SIGN UP / CREATE ACCOUNT FORM -->
+      <div class="auth-form-panel" id="panel-signup">
+        <form id="auth-register-form" style="display: flex; flex-direction: column; gap: 1rem;">
+          <div class="auth-input-group">
+            <label for="signup-name-input">Your Name</label>
+            <input type="text" class="auth-input" id="signup-name-input" placeholder="e.g. Siddharth Sharma" required />
+          </div>
+
+          <div class="auth-input-group">
+            <label for="signup-email-input">Email address</label>
+            <input type="email" class="auth-input" id="signup-email-input" placeholder="name@example.com" required />
+          </div>
+
+          <div class="auth-input-group">
+            <label for="signup-password-input">Create Password</label>
+            <input type="password" class="auth-input" id="signup-password-input" placeholder="At least 6 characters" required />
+          </div>
+
+          <div class="auth-input-group">
+            <label>Choose Your Plan</label>
+            <div class="plan-select-grid">
+              <div class="plan-pill" data-plan="Mobile">
+                <h4>Mobile</h4>
+                <p>₹149/mo • 480p</p>
+              </div>
+              <div class="plan-pill" data-plan="Basic">
+                <h4>Basic</h4>
+                <p>₹199/mo • 720p HD</p>
+              </div>
+              <div class="plan-pill" data-plan="Standard">
+                <h4>Standard</h4>
+                <p>₹499/mo • 1080p FHD</p>
+              </div>
+              <div class="plan-pill selected" data-plan="Premium 4K">
+                <h4>Premium 4K</h4>
+                <p>₹649/mo • 4K+HDR</p>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem; padding: 0.9rem; font-size: 1.05rem;">
+            Create Account & Start Watching
+          </button>
+
+          <p class="auth-switch-text">
+            Already have an account? <a href="#" id="switch-to-signin">Sign in.</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 4: PROFILE MANAGER & ADD PROFILE MODAL
+       ========================================================================= -->
+  <div class="modal-overlay" id="profile-manager-modal-overlay">
+    <div class="profile-manager-modal">
+      <button class="modal-close-btn" id="profile-manager-close" aria-label="Close">✕</button>
+      <h2>Manage Profiles</h2>
+      
+      <!-- Existing Profiles Grid with Delete option -->
+      <div class="profiles-manage-grid" id="profiles-manage-grid">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Add New Profile Form -->
+      <form class="profile-add-form" id="add-profile-form">
+        <h3 style="font-size: 1.1rem; color: #e5e5e5;">Add a New Profile</h3>
+        
+        <div class="auth-input-group">
+          <label>Pick an Avatar:</label>
+          <div class="profile-avatar-selector">
+            <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=120&auto=format&fit=crop&q=80" class="avatar-opt selected" alt="Avatar 1" />
+            <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=120&auto=format&fit=crop&q=80" class="avatar-opt" alt="Avatar 2" />
+            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?w=120&auto=format&fit=crop&q=80" class="avatar-opt" alt="Avatar 3" />
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80" class="avatar-opt" alt="Avatar 4" />
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" class="avatar-opt" alt="Avatar 5" />
+          </div>
+        </div>
+
+        <div class="auth-input-group">
+          <input type="text" class="auth-input" id="new-profile-name-input" placeholder="Profile Name (e.g. Alex, Mom, Roommate)" required />
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: #bbb;">
+          <input type="checkbox" id="new-profile-kids-checkbox" style="width: 18px; height: 18px; accent-color: var(--netflix-red);" />
+          <label for="new-profile-kids-checkbox">Kid's Profile? (Shows family-friendly content only)</label>
+        </div>
+
+        <button type="submit" class="btn btn-white" style="margin-top: 0.5rem; padding: 0.8rem;">
+          Save Profile
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       TOAST NOTIFICATIONS CONTAINER
+       ========================================================================= -->
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/banner.js"></script>
+  <script src="js/rows.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
