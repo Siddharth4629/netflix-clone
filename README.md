@@ -98,3 +98,15 @@ Run in terminal:
 python -m http.server 3000
 ```
 Then visit `http://localhost:3000` in your browser.
+
+## 📦 Deployment & CI
+
+This repository includes GitHub Actions workflows:
+
+- **CI**: validates `index.html` with `html-validator` on push and pull requests.
+- **Deploy**: publishes the site to GitHub Pages automatically when changes are pushed to `main`.
+
+Once the deploy workflow runs, the live site will be available at:
+
+https://Siddharth4629.github.io/netflix-clone/
+
